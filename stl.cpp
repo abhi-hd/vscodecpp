@@ -148,7 +148,7 @@ class Maps
         m.insert(pair<string, int>("Top", 40));
         m.insert(pair<string, int>("Coder", 80));
         m.insert(pair<string, int>("STL", 120));
-        m["Fuck"] = 160;
+        m["F#$%"] = 160;
         m["Text"] = 200;
         m["Formatiing"] = 240;
     }
