@@ -187,6 +187,29 @@ class Dfs
             for_each(W[i].begin(), W[i].end(), dfs_func);
         }
     }
+    bool check_graph_connected_bfs() 
+    {
+        int start_vertex = 0;
+        vi V(N, false);
+        queue< int > Q;
+        Q.push(start_vertex);
+        V[start_vertex] = true;
+        while(!Q.empty()) 
+        {
+            int i = Q.front();
+            // get the tail element from queue
+            Q.pop();
+            tr(W[i], it) 
+            {
+                if(!V[*it]) 
+                {
+                    V[*it] = true;
+                    Q.push(*it);
+                }
+            }
+        }
+        return (find(all(V), 0) == V.end());
+    }
 };
 class Queues
 {
