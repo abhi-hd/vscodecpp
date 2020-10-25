@@ -1,7 +1,10 @@
 #include <bits/stdc++.h>
-#include <iostream>
-
 #define tr(container, it) for(typeof(container.begin()) it = container.begin(); it != container.end(); it++)
+#define sz(a) int((a).size())
+#define pb push_back
+#define all© ©.begin(),©.end()
+#define present(c,x) (©.find(x) != ©.end())
+#define cpresent(c,x) (find(all©,x) != ©.end())
 
 using namespace std;
 
@@ -12,7 +15,6 @@ class Vectors
     vector<int> integerVector;
     vector< vector < int > > integerMatrix;
     bool is_nonempty_ok = !integerVector.empty();
-
 
     void modify_vector(vector< int >& v) 
     { 
@@ -125,6 +127,31 @@ class Sets
         cout << total << "\n";
     }
 };
+class Maps
+{
+    public:
+    map<string, int> m;
+    Maps()
+    {
+        init_mapexample(m);
+    }
+    void init_mapexample(map<string, int> &m)
+    {
+        m.insert(pair<string, int>("Top", 40));
+        m.insert(pair<string, int>("Coder", 80));
+        m.insert(pair<string, int>("STL", 120));
+        m["Fuck"] = 160;
+        m["Text"] = 200;
+        m["Formatiing"] = 240;
+    }
+    void print_map(map<string, int> &m)
+    {
+        tr(m, it)
+        {
+            cout<< it->first << " --- " << it->second << "\n";
+        }        
+    }
+};
 int main()
 {
     bool finishExecuting;
@@ -133,6 +160,8 @@ int main()
     v.vector_main();
     Sets s;
     s.set_main();
+    Maps m;
+    m.print_map(m.m);
     cin >> finishExecuting;
 
     return 0;
