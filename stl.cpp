@@ -1,21 +1,29 @@
 #include <bits/stdc++.h>
 #define tr(container, it) for(typeof(container.begin()) it = container.begin(); it != container.end(); it++)
 #define sz(a) int((a).size())
-#define pb push_back
-#define all© ©.begin(),©.end()
+#define pb push_back 
 #define present(c,x) (©.find(x) != ©.end())
-#define cpresent(c,x) (find(all©,x) != ©.end())
+//#define cpresent(c,x) (find(all©,x) != ©.end())
+
+typedef vector< int > vi;
+typedef vector< vi > vvi;
 
 using namespace std;
 
 class Vectors
 {
-    public: 
-
+    public:
     vector<int> integerVector;
     vector< vector < int > > integerMatrix;
     bool is_nonempty_ok = !integerVector.empty();
-
+    void print_vector(vector< int >& v)
+    {
+        for(int i = 0; i < v.size(); i++ )
+        {
+            cout<< v[i] <<" ";
+        }
+        cout<<"\n";
+    }
     void modify_vector(vector< int >& v) 
     { 
         v[0]++;
@@ -53,8 +61,8 @@ class Vectors
     void vector_main()
     {
         int data[10] = { 1, 3, 5, 7, 9, 11, 13, 15, 17, 19 };
-        vector< int > integerVector(data, data + sizeof(data)/sizeof(data[0]));
-
+        vector< int > newVector(data, data + sizeof(data)/sizeof(data[0]));
+        this->integerVector = newVector;
         //integerVector.insert(1, 42); // Insert value 42 after the first
 
         vector< int > v2(integerVector.rbegin(), integerVector.rend());
@@ -130,7 +138,7 @@ class Sets
 class Maps
 {
     public:
-    map<string, int> m;
+    map < string, int > m;
     Maps()
     {
         init_mapexample(m);
@@ -152,6 +160,48 @@ class Maps
         }        
     }
 };
+class StaticOps
+{
+    public:
+    static void append_vector(vector < int > &v1, vector < int > &v2)
+    {
+        // Now copy v2 to the end of v1
+        v1.resize(v1.size() + v2.size());
+        // Ensure v1 have enough space
+        copy(v2.begin(), v2.end(), v1.end() - v2.size());
+        // Copy v2 elements right after v1 ones
+    }
+};
+class Dfs
+{
+    public:
+    int N; // number of vertices
+    vvi W; // graph
+    vector < bool > V; // V is a visited flag 
+
+    void dfs_func(int i)
+    {
+        if(!V[i])
+        {
+            V[i] = true;
+            for_each(W[i].begin(), W[i].end(), dfs_func);
+        }
+    }
+};
+class Queues
+{
+    public:
+    queue < int > q;
+    Queues()
+    {
+        for(int i=0; 1<100; i++)
+        {
+            q.push(i*i);
+            cout << q.back();
+            q.pop();
+        }
+    }
+};
 int main()
 {
     bool finishExecuting;
@@ -162,7 +212,10 @@ int main()
     s.set_main();
     Maps m;
     m.print_map(m.m);
-    cin >> finishExecuting;
+    vector < int > vec = v.integerVector;
+    StaticOps::append_vector(vec, v.integerVector);
+    v.print_vector(vec);
 
+    cin >> finishExecuting;
     return 0;
 }
