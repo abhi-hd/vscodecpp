@@ -208,7 +208,7 @@ class Dfs
                 }
             }
         }
-        return NULL//(find(all(V), 0) == V.end());
+        return NULL;//(find(all(V), 0) == V.end());
     }
 };
 class Queues
