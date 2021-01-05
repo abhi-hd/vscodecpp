@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../functions"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stack": "cpp",
+			"vector": "cpp",
+			"xstring": "cpp",
+			"iostream": "cpp"
+		}
+	}
+}
